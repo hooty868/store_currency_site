@@ -16,8 +16,12 @@ db.once('open', () => {
   console.log('mongodb connected!')
 })
 
+const Todo = require('./models/todo')
 app.get('/', (req, res) => {
-  res.render('index')
+  Todo.find()
+    .lean()
+    .then(todos => res.render('index', { todos }))
+    .catch(error => console.error(error))
 })
 
 // 設定 port 3000
