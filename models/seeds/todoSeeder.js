@@ -7,8 +7,17 @@ db.on('error', () => {
 })
 db.once('open', () => {
   console.log('mongodb connected!')
-  for (let i = 0; i < 10; i++) {
-    Stoke.create({ name: 'name-' + i })
-  }
+  Stoke.create({
+    name: '人民幣 (CNY)',
+    exchange: 4.309,
+    buyPrice: 85000,
+    date: '09/04'
+  })
+  Stoke.create({
+    name: '美金 (USD)',
+    exchange: 29.359,
+    buyPrice: 100000,
+    date: '09/02'
+  })
   console.log('done')
 })
