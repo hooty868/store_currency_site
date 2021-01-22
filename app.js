@@ -19,7 +19,7 @@ app.use(express.static('public'))
 require('./config/mongoose')
 
 const PORT = process.env.PORT || 3000
-// 設定應用程式監聽的埠號
+
 app.listen(PORT, () => {
   console.log('App is running on http://localhost:${PORT}')
 })
