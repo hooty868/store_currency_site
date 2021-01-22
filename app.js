@@ -2,6 +2,10 @@ const express = require('express')
 const app = express()
 const catchCurrency = require('./public/js/catchPrice')
 const exphbs = require('express-handlebars')
+
+const methodOverride = require('method-override')
+app.use(methodOverride('_method'))
+
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -72,7 +76,7 @@ app.post('/currency/new', (req, res) => {
     .catch(error => console.log(error))
 })
 
-app.post('/currency/:id/delete', (req, res) => {
+app.delete('/currency/:id', (req, res) => {
   const id = req.params.id
   return Todo.findById(id)
     .then(todo => todo.remove())
