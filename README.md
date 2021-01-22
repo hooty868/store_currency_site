@@ -1,6 +1,6 @@
-# profile_page
+# 外匯計算器
 #### 個人資料頁面，主要引入Materialize-css框架，以及animated.js動畫設計
-![首頁](https://media.giphy.com/media/WarWHH9ZnE9jN7uAgK/giphy.gif)
+![首頁](https://media.giphy.com/media/09hV6Vr1h6XhMe1tZy/giphy.gif)
 ## 引入套件
 [![npm version](https://img.shields.io/badge/npm-6.14.10-blue)](https://www.npmjs.org/)
 
