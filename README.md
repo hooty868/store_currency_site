@@ -3,6 +3,9 @@
 ![首頁](https://media.giphy.com/media/09hV6Vr1h6XhMe1tZy/giphy.gif)
 ## 引入套件
 [![npm version](https://img.shields.io/badge/npm-6.14.10-blue)](https://www.npmjs.org/)
+[![MongoDB version](https://img.shields.io/badge/npm-6.14.10-blue)](https://www.npmjs.org/)
+[![request version](https://img.shields.io/badge/npm-6.14.10-blue)](https://www.npmjs.org/)
+
 
 
 ## 主要功能
