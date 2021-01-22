@@ -24,7 +24,7 @@ let requestData = () => {
           const spot = list.eq(i).find("[class='rate-content-sight text-right print_hide hidden-phone']");
           const cash_bid = cash.eq(0).text();
           const cash_ask = cash.eq(1).text();
-          const spot_bid = cash.eq(0).text();
+          const spot_bid = parseFloat(cash.eq(0).text());
           const spot_ask = parseFloat(cash.eq(1).text());
           data.push({ currency, cash_bid, cash_ask, spot_bid, spot_ask });
 

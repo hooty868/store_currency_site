@@ -11,7 +11,7 @@
           <div class="card-body">
             <div class="card-title stoke-title d-flex justify-content-end">
               <form action="/currency/{{ this._id }}/delete" method="POST">
-                <button type="submit" style="margin: 0;padding:2px;">delete</button>
+                <button type="submit" style="margin: 0;padding:4px;">delete</button>
               </form>
             </div>
             <div class="card-text d-flex">
@@ -19,8 +19,8 @@
               <p class="stoke-name">{{this.currency}}</p>
             </div>
             <div class="card-text d-flex">
-              <p class="mr-1">即期賣出匯率:</p>
-              <p class="stoke-price" data-stoke-amount>{{this.spot_ask}}</p>
+              <p class="mr-1">即期銀行買入匯率:</p>
+              <p class="stoke-price" data-stoke-amount>{{this.spot_bid}}</p>
             </div>
             <div class="card-text d-flex">
               <p class="mr-1">當期買進匯率:</p>
@@ -48,9 +48,9 @@
       <div class="form-container mt-2">
         <form id="form-input" action="/currency/new" method="POST">
           <div class="form-group">
-            <label for="exampleInputEmail1" class="text-white">幣別：美金</label>
+            <label for="exampleInputEmail1" class="text-primary">幣別：美金</label>
             <input type="radio" name="name" value="美金 (USD)" required>
-            <label for="exampleInputEmail1" class="text-white">人民幣</label>
+            <label for="exampleInputEmail1" class="text-primary">人民幣</label>
             <input type="radio" name="name" value="人民幣 (CNY)" required>
             <small id="stokeNumber" class="form-text text-muted">麻煩在上方選擇你的幣別</small>
           </div>

@@ -28,6 +28,7 @@ app.get('/', (req, res) => {
       const currencyFinal = await catchCurrency()
       Todo.find()
         .lean()
+        .sort({ _id: 'desc' })
         .then(todos => {
           let final = []
           let total = 0
@@ -47,16 +48,15 @@ app.get('/', (req, res) => {
             }
           })
           final = final.map(currency => {
-            let obj = {
+            const obj = {
               ...currency,
-              profit: (currency.buyPrice / currency.exchange) * (currency.spot_ask - currency.exchange)
+              profit: (currency.buyPrice / currency.exchange) * (currency.spot_bid - currency.exchange)
             }
             total += obj.profit
             return obj
           })
           total = Math.round(total)
           res.render('index', { final, total })
-          // console.log(final)
         })
         .catch(error => console.error(error))
     } catch (error) {
