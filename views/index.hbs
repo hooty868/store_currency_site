@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row stoke-head align-items-center">
+    <h2><span class="badge badge-pill badge-info">外匯利潤估計</span></h2>
+    <button onClick="window.location.reload();" class="btn button reload-btn">獲取最新資料</button>
+  </div>
+  <div class="row stoke-content">
+    <div class="col-md-6" data-order-lists>
+      <div class="card-list">
+        {{#each final}}
+        <div class="card mt-2 stoke-card">
+          <div class="card-body">
+            <div class="card-title stoke-title d-flex justify-content-end">
+              <form action="/currency/{{ this._id }}?_method=DELETE" method="POST">
+                <button type="submit" style="margin: 0;padding:4px;">delete</button>
+              </form>
+            </div>
+            <div class="card-text d-flex">
+              <p class="mr-1">選定幣值：</p>
+              <p class="stoke-name">{{this.currency}}</p>
+            </div>
+            <div class="card-text d-flex">
+              <p class="mr-1">即期銀行買入匯率:</p>
+              <p class="stoke-price" data-stoke-amount>{{this.spot_bid}}</p>
+            </div>
+            <div class="card-text d-flex">
+              <p class="mr-1">當期買進匯率:</p>
+              <p class="stoke-price" data-stoke-price>{{this.exchange}}</p>
+            </div>
+            <div class="card-text d-flex">
+              <p class="mr-1">當期台幣買進總價:</p>
+              <p class="stoke-price" data-stoke-price>{{this.buyPrice}}</p>
+            </div>
+          </div>
+          <div class="card-footer text-right">
+            <div class="card-text text-muted d-flex justify-content-end">
+              <p class="mx-1">利潤總價：$</p>
+              <span>{{this.profit}}</span>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    <div class="col-md-6" data-stoke-panel>
+      <div class="stoke-total d-flex mt-2">
+        <h3 class="mx-1">總共利潤：$<span class="badge badge-danger">{{total}}</span></h3>
+      </div>
+      <div class="form-container mt-2">
+        <form id="form-input" action="/currency/new" method="POST">
+          <div class="form-group">
+            <label for="exampleInputEmail1" class="text-primary">幣別：美金</label>
+            <input type="radio" name="name" value="美金 (USD)" required>
+            <label for="exampleInputEmail1" class="text-primary">人民幣</label>
+            <input type="radio" name="name" value="人民幣 (CNY)" required>
+            <small id="stokeNumber" class="form-text text-muted">麻煩在上方選擇你的幣別</small>
+          </div>
+          <div class="form-group">
+            <label for="stokeAmount" class="text-white">購買匯率：</label>
+            <input type="number" step="0.001" class="form-control" name="name" placeholder="購買時的匯率~~"
+              style="width: 50%;">
+          </div>
+          <div class="form-group">
+            <label for="stokePrice" class="text-white">購買總額台幣：</label>
+            <input type="number" step="0.01" class="form-control" name="name" placeholder="購買時的總額~~"
+              style="width: 50%;">
+          </div>
+          <button type="submit" class="btn btn-success">進倉</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
