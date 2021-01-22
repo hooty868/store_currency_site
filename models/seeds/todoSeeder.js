@@ -1,10 +1,6 @@
-const mongoose = require('mongoose')
+const db = require('../../config/mongoose')
 const Stoke = require('../todo') // 載入 todo model
-mongoose.connect('mongodb://localhost/stoke', { useNewUrlParser: true, useUnifiedTopology: true })
-const db = mongoose.connection
-db.on('error', () => {
-  console.log('mongodb error!')
-})
+
 db.once('open', () => {
   console.log('mongodb connected!')
   Stoke.create({
