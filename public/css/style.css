@@ -25,6 +25,9 @@ button:focus {
   outline: none;
 }
 /* page css style */
+body {
+  background: url('https://upload.cc/i1/2021/01/27/4p8fJs.jpg');
+}
 .container {
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 3px;

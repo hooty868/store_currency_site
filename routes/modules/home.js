@@ -3,7 +3,7 @@ const catchCurrency = require('../../public/js/catchPrice')
 const router = express.Router()
 const Todo = require('../../models/todo')
 router.get('/', (req, res) => {
-  async function doThings() {
+  (async function () {
     try {
       const currencyFinal = await catchCurrency()
       Todo.find()
@@ -42,7 +42,7 @@ router.get('/', (req, res) => {
     } catch (error) {
       console.log(error)
     }
-  } doThings()
+  }())
 })
 
 module.exports = router
