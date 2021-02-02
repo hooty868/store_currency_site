@@ -76,3 +76,9 @@ body {
 .stoke-total h3{
   margin: 5px 0;
 }
+
+@media screen and (max-width: 576px) {
+  .container {
+    height: 1100px;
+  }
+}
