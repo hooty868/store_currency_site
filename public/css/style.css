@@ -24,6 +24,13 @@ button:active {
 button:focus {
   outline: none;
 }
+form {
+  margin:0;
+}
+button {
+  margin:0;
+  padding:0;
+}
 /* page css style */
 body {
   background: url('https://upload.cc/i1/2021/01/27/4p8fJs.jpg');
@@ -56,8 +63,12 @@ body {
 .stoke-card .card-title{
   margin: 0;
 }
-.stoke-card .card-title p{
-  margin: 0;
+.stoke-card .card-title img{
+  width:100px;
+  height:35px;
+}
+.stoke-card .card-title button{
+  padding:4px;
 }
 .stoke-card .card-text p{
   margin: 0;

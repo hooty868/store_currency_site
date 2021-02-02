@@ -16,13 +16,15 @@ router.get('/', (req, res) => {
             if (todo.name === '美金 (USD)') {
               const obj = {
                 ...todo,
-                ...currencyFinal[0]
+                ...currencyFinal[0],
+                cover: 'https://upload.cc/i1/2021/02/02/lNqvYO.png'
               }
               return obj
             } else if (todo.name === '人民幣 (CNY)') {
               const obj = {
                 ...todo,
-                ...currencyFinal[1]
+                ...currencyFinal[1],
+                cover: 'https://upload.cc/i1/2021/02/02/CR9NuQ.jpg'
               }
               return obj
             }

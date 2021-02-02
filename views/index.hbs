@@ -9,9 +9,10 @@
         {{#each final}}
         <div class="card mt-2 stoke-card">
           <div class="card-body">
-            <div class="card-title stoke-title d-flex justify-content-end">
+            <div class="card-title stoke-title d-flex justify-content-between">
+              <img src={{ this.cover }} alt="US dollers">
               <form action="/currency/{{ this._id }}?_method=DELETE" method="POST">
-                <button type="submit" style="margin: 0;padding:4px;">delete</button>
+                <button type="submit">delete</button>
               </form>
             </div>
             <div class="card-text d-flex">
