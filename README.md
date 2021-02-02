@@ -17,8 +17,25 @@
 - 可刪除購買外幣資訊
 
 ## 專案開啟方式
+- 1.clone到你要的專屬資料夾
+- 2.安裝mongodb
+- 3.到terminal開啟你的mondo-db資料夾路徑
+```
+cd /mongodb/bin
+```
+- 4.到terminal開啟你的mondo-db,輸入以下訊息
+```
+以mac來做示範：
+./mongod --dbpath /Users/{username}/mongodb-data
+```
+- 2.用terminal選到clone的資料夾位置
+- 3.在termianl輸入
+```
+nodemon app.js
+```
+- 盡情使用來玩玩看
 
-
+# 專案介紹
 ## 主頁
 利用`express`使用restful-API去存取mongo-db的資料，並利用`request`去抓取最新匯率資料.
 #### 步驟
